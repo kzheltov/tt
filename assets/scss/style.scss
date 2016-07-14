@@ -1,0 +1,283 @@
+$impPath: '../i';
+
+
+
+
+
+
+
+
+
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  background: url($impPath+'/geometry2.png');
+}
+
+.underdotted {
+  border-bottom: 1px dotted #000;
+}
+
+#wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
+  background: #fff;
+  padding-bottom: 20px;
+}
+
+.system {
+  background: #ccc;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+    height: inherit;
+    li {
+      margin: 0 5px;
+      height: inherit;
+      display: inline-block;
+      a {
+        display: block;
+        padding: 0 10px;
+        height: inherit;
+        text-decoration: none;
+        color: #000088;
+        &:hover {
+          background: #eee;
+        }
+        &:visited {
+          color: #000088;
+        }
+      }
+    }
+  }
+}
+
+body.i-dark {
+  #wrapper {
+    background: #000;
+    color: #fff;
+  }
+
+  .system {
+    background: #666;
+  }
+  a {
+    color: #ffcc00 !important;
+  }
+
+  .rating {
+    .stars{
+      .star{
+        background-image: url($impPath+'/stars-dark.png');
+      }
+    }
+  }
+}
+
+.rating {
+  padding: 15px 10px;
+  .stars{
+    .star{
+      display: block;
+      float: left;
+      width: 18px;
+      height: 16px;
+      background: url($impPath+'/stars.png') top center no-repeat;
+      &.i-hover {
+        background-position: bottom center;
+      }
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.progressbar {
+  padding: 15px 10px;
+  width: 100%;
+  height: 13px;
+  .container{
+    border: 1px solid #f7f7f7;
+    border-top: 1px solid #cecece;
+    height: 13px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+
+    .filled{
+      border-radius: 5px;
+      height: 13px;
+      margin-top: -1px;
+      margin-left: -1px;
+      margin-right: -1px;
+      width: 20%;
+      background: url($impPath+'/progress-bg.png') repeat-x;
+    }
+    .percent{
+      position:absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      font-size: 9px;
+      z-index: 1;
+    }
+  }
+}
+
+.btn-box {
+  padding: 15px 10px;
+  input[type=submit] {
+    background: url($impPath+'/btn-bg.png') top center no-repeat;
+    width: 86px;
+    height: 24px;
+    line-height: 22px;
+    border: 0;
+    outline: none;
+    text-align: center;
+    font-size: 11px;
+    text-shadow: 1px 0 1px rgba(255,255,255,.75);
+    cursor: pointer;
+
+    &:focus {
+      background-position: 0 -24px;
+    }
+    &:hover {
+      background-position: 0 -48px;
+    }
+    &:active {
+      background-position: 0 -72px;
+    }
+  }
+}
+
+.browsers {
+  padding: 15px 10px;
+  .browser-icon {
+    background: url($impPath+'/browsers.png') no-repeat;
+    width: 126px;
+    display: inline-block;
+
+    &.gc{
+      background-position: 0 0;
+      height: 121px;
+    }
+    &.ff{
+      background-position: 0 -121px;
+      height: 124px;
+    }
+    &.op{
+      background-position: 0 -245px;
+      height: 118px;
+    }
+    &.sf{
+      background-position: 0 -363px;
+      height: 125px;
+    }
+    &.ie{
+      background-position: 0 -488px;
+      height: 123px;
+
+    }
+  }
+}
+
+.content {
+  padding: 15px 20px;
+  h1 {
+    font-size: 24px;
+    margin : 0 0 20px 0;
+  }
+  .text {
+    p {
+      margin-bottom: 20px;
+      text-indent: 15px;
+    }
+    a {
+      color: #0070ed;
+    }
+    ul{
+      li {
+        line-height: 20px;
+        position: relative;
+        &:before {
+          width: 14px;
+          content: "\2014 ";
+          position: absolute;
+          left: -12px;
+        }
+      }
+    }
+  }
+}
+
+
+@media all and (min-width: 768px) {
+  .progressbar {
+    width: 50%;
+    padding: 40px 30px;
+  }
+
+  .rating {
+    padding: 40px 30px;
+  }
+
+  .btn-box {
+    padding: 40px 30px;
+  }
+
+  .browsers {
+    padding: 40px 30px;
+  }
+
+  .content {
+    padding: 40px 30px;
+  }
+
+  .browsers {
+    .browser-icon {
+      &.ie {
+        float: right
+      }
+    }
+  }
+
+  .content {
+    padding: 40px 30px;
+    h1 {
+      max-width: 290px;
+    }
+    .text {
+      column-count: 2;
+      column-gap: 80px;
+    }
+  }
+}
+@media all and (min-width: 960px) {
+  .content {
+    max-width: 80%;
+  }
+}

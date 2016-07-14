@@ -1,0 +1,18 @@
+{
+  "name": "ya-test",
+  "description": "test task",
+  "main": "index.js",
+  "authors": [
+    "Zheltov Kirill <ds.valmont@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
